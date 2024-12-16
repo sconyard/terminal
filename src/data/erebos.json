@@ -12,8 +12,7 @@
           "EREBOS RESEARCH STATION",
           "=======================",
           "",
-          "Welcome to the Apex Dynamics Station Control Interface.",
-          "Authorized personnel only.",
+          "Welcome to the Apex Dynamics Control Interface.",
           "",
           {
             "text": "> LOG IN",
@@ -63,9 +62,6 @@
           "Cryogenics Bay",
           "=============",
           "",
-          "Faint blue light reflects off frost-covered cryo-pods.",
-          "Some pods are empty; others hiss faintly with life support systems.",
-          "",
           {
             "text": "> VIEW EVACUATION LOGS",
             "type": "link",
@@ -85,8 +81,9 @@
           "Evacuation Logs",
           "===============",
           "",
-          "STAFF EVACUATED: 366 DAYS AGO.",
-          "NOTE: No records for USER [PLAYER_NAME].",
+          "EVACUATION STATUS: COMPLETE",
+          "LAST RECORDED DATE: 366 DAYS AGO",
+          "NOTE: No records found for current user.",
           "",
           {
             "text": "< BACK",
@@ -102,10 +99,8 @@
           "Engineering Bay",
           "===============",
           "",
-          "Damaged conduits spark faintly. Tools and machinery sit in perfect order.",
-          "",
           {
-            "text": "> CHECK POWER DISTRIBUTION",
+            "text": "> CHECK POWER GRID STATUS",
             "type": "link",
             "target": "powerstatus"
           },
@@ -120,14 +115,11 @@
         "id": "powerstatus",
         "type": "screen",
         "content": [
-          "Power Distribution Status",
-          "=========================",
+          "Power Grid Status",
+          "=================",
           "",
-          {
-            "type": "text",
-            "className": "alert",
-            "text": "WARNING: Power Grid Instability Detected."
-          },
+          "STATUS: UNSTABLE",
+          "RECOMMENDATION: MANUAL REPAIR REQUIRED.",
           "",
           {
             "text": "< BACK",
@@ -142,9 +134,6 @@
         "content": [
           "Medbay",
           "======",
-          "",
-          "Sterile white surfaces gleam under bright lights.",
-          "A bio-pod hums faintly. Something is inside.",
           "",
           {
             "text": "> ACCESS BIO-POD DATA",
@@ -165,11 +154,8 @@
           "Bio-Pod Data",
           "============",
           "",
-          {
-            "type": "text",
-            "className": "alert",
-            "text": "DATA CORRUPTED. Subject identified as NON-HUMAN ENTITY."
-          },
+          "WARNING: DATA CORRUPTED.",
+          "SUBJECT IDENTIFICATION: NON-HUMAN ENTITY DETECTED.",
           "",
           {
             "text": "< BACK",
@@ -184,8 +170,6 @@
         "content": [
           "Command Center",
           "=============",
-          "",
-          "Dust-covered terminals flicker with residual power.",
           "",
           {
             "text": "> VIEW SECURITY FEEDS",
@@ -206,7 +190,8 @@
           "Security Feeds",
           "=============",
           "",
-          "Static... Movement detected in CRYOGENICS BAY.",
+          "MOVEMENT DETECTED: CRYOGENICS BAY",
+          "FEED STATUS: UNSTABLE",
           "",
           {
             "text": "< BACK",
@@ -221,9 +206,6 @@
         "content": [
           "Containment Area",
           "================",
-          "",
-          "The artifact pulses, warping the light around it.",
-          "Containment seals appear damaged.",
           "",
           {
             "text": "> ACCESS ARTIFACT LOGS",
@@ -244,11 +226,8 @@
           "Artifact Logs",
           "=============",
           "",
-          {
-            "type": "text",
-            "className": "alert",
-            "text": "LOG ERROR: TEMPORAL FEEDBACK LOOP DETECTED."
-          },
+          "LOG STATUS: CORRUPTED",
+          "ANOMALY DETECTED: TEMPORAL FEEDBACK LOOP.",
           "",
           {
             "text": "< BACK",
