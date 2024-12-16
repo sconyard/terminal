@@ -236,5 +236,23 @@
           }
         ]
       }
+    ],
+    "dialogs": [
+        {
+            "id": "lockedDialog",
+            "type": "alert",
+            "content": [
+                "Error! Authorization required."
+            ]
+        },
+        {
+            "id": "airlockError",
+            "type": "alert",
+            "content": [
+                "ERROR! Lock override in effect.",
+                "",
+                "Cannot unlock remotely. Manual intervention required."
+            ]
+        }
     ]
-  }
+}
