@@ -49,10 +49,15 @@
             "target": "commandcenter"
           },
           {
-            "text": "> CONTAINMENT AREA",
+            "text": "> CONTAINMENT",
             "type": "link",
             "target": "containment"
-          }
+          },
+          {
+          "text": "< LOG OUT",
+          "target": "screen0",
+          "type": "link"
+        }
         ]
       },
       {
@@ -189,8 +194,15 @@
         "content": [
           "Security Feeds",
           "=============",
-          "",
+          "ERROR IN VIDEO FEEDS",
+          ".............",
+          "_______________",
+          "|             |",
+          "|             |",
           "MOVEMENT DETECTED: CRYOGENICS BAY",
+          "MOVEMENT DETECTED: MED BAY",
+          "MOVEMENT DETECTED: CONTAINMENT",
+          "MOVEMENT DETECTED: ENGINEERING BAY",
           "FEED STATUS: UNSTABLE",
           "",
           {
@@ -204,7 +216,7 @@
         "id": "containment",
         "type": "screen",
         "content": [
-          "Containment Area",
+          "Containment",
           "================",
           "",
           {
