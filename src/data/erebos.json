@@ -1,0 +1,261 @@
+{
+    "config": {
+      "name": "Erebos Research Station Terminal",
+      "author": "@your_name",
+      "comment": "Phosphor content file for the 'Erebos Research Station' module for the Mothership RPG."
+    },
+    "screens": [
+      {
+        "id": "screen0",
+        "type": "screen",
+        "content": [
+          "EREBOS RESEARCH STATION",
+          "=======================",
+          "",
+          "Welcome to the Apex Dynamics Station Control Interface.",
+          "Authorized personnel only.",
+          "",
+          {
+            "text": "> LOG IN",
+            "type": "link",
+            "target": "menu"
+          }
+        ]
+      },
+      {
+        "id": "menu",
+        "type": "screen",
+        "content": [
+          "Main Menu",
+          "=========",
+          "",
+          {
+            "text": "> CRYOGENICS BAY",
+            "type": "link",
+            "target": "cryogenics"
+          },
+          {
+            "text": "> ENGINEERING BAY",
+            "type": "link",
+            "target": "engineering"
+          },
+          {
+            "text": "> MEDBAY",
+            "type": "link",
+            "target": "medbay"
+          },
+          {
+            "text": "> COMMAND CENTER",
+            "type": "link",
+            "target": "commandcenter"
+          },
+          {
+            "text": "> CONTAINMENT AREA",
+            "type": "link",
+            "target": "containment"
+          }
+        ]
+      },
+      {
+        "id": "cryogenics",
+        "type": "screen",
+        "content": [
+          "Cryogenics Bay",
+          "=============",
+          "",
+          "Faint blue light reflects off frost-covered cryo-pods.",
+          "Some pods are empty; others hiss faintly with life support systems.",
+          "",
+          {
+            "text": "> VIEW EVACUATION LOGS",
+            "type": "link",
+            "target": "cryologs"
+          },
+          {
+            "text": "< BACK",
+            "target": "menu",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "cryologs",
+        "type": "screen",
+        "content": [
+          "Evacuation Logs",
+          "===============",
+          "",
+          "STAFF EVACUATED: 366 DAYS AGO.",
+          "NOTE: No records for USER [PLAYER_NAME].",
+          "",
+          {
+            "text": "< BACK",
+            "target": "cryogenics",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "engineering",
+        "type": "screen",
+        "content": [
+          "Engineering Bay",
+          "===============",
+          "",
+          "Damaged conduits spark faintly. Tools and machinery sit in perfect order.",
+          "",
+          {
+            "text": "> CHECK POWER DISTRIBUTION",
+            "type": "link",
+            "target": "powerstatus"
+          },
+          {
+            "text": "< BACK",
+            "target": "menu",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "powerstatus",
+        "type": "screen",
+        "content": [
+          "Power Distribution Status",
+          "=========================",
+          "",
+          {
+            "type": "text",
+            "className": "alert",
+            "text": "WARNING: Power Grid Instability Detected."
+          },
+          "",
+          {
+            "text": "< BACK",
+            "target": "engineering",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "medbay",
+        "type": "screen",
+        "content": [
+          "Medbay",
+          "======",
+          "",
+          "Sterile white surfaces gleam under bright lights.",
+          "A bio-pod hums faintly. Something is inside.",
+          "",
+          {
+            "text": "> ACCESS BIO-POD DATA",
+            "type": "link",
+            "target": "biopod"
+          },
+          {
+            "text": "< BACK",
+            "target": "menu",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "biopod",
+        "type": "screen",
+        "content": [
+          "Bio-Pod Data",
+          "============",
+          "",
+          {
+            "type": "text",
+            "className": "alert",
+            "text": "DATA CORRUPTED. Subject identified as NON-HUMAN ENTITY."
+          },
+          "",
+          {
+            "text": "< BACK",
+            "target": "medbay",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "commandcenter",
+        "type": "screen",
+        "content": [
+          "Command Center",
+          "=============",
+          "",
+          "Dust-covered terminals flicker with residual power.",
+          "",
+          {
+            "text": "> VIEW SECURITY FEEDS",
+            "type": "link",
+            "target": "securityfeeds"
+          },
+          {
+            "text": "< BACK",
+            "target": "menu",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "securityfeeds",
+        "type": "screen",
+        "content": [
+          "Security Feeds",
+          "=============",
+          "",
+          "Static... Movement detected in CRYOGENICS BAY.",
+          "",
+          {
+            "text": "< BACK",
+            "target": "commandcenter",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "containment",
+        "type": "screen",
+        "content": [
+          "Containment Area",
+          "================",
+          "",
+          "The artifact pulses, warping the light around it.",
+          "Containment seals appear damaged.",
+          "",
+          {
+            "text": "> ACCESS ARTIFACT LOGS",
+            "type": "link",
+            "target": "artifactlogs"
+          },
+          {
+            "text": "< BACK",
+            "target": "menu",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "artifactlogs",
+        "type": "screen",
+        "content": [
+          "Artifact Logs",
+          "=============",
+          "",
+          {
+            "type": "text",
+            "className": "alert",
+            "text": "LOG ERROR: TEMPORAL FEEDBACK LOOP DETECTED."
+          },
+          "",
+          {
+            "text": "< BACK",
+            "target": "containment",
+            "type": "link"
+          }
+        ]
+      }
+    ]
+  }
