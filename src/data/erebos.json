@@ -206,6 +206,86 @@
         "content": [
           "Engineering Admin",
           "=================",
+          "",
+          {
+            "type": "toggle",
+            "states": [
+              {
+                "text": "> CRYOGENICS BAY :: POWER ON",
+                "active": true
+              },
+              {
+                "text": "> CRYOGENICS BAY :: POWER OFF",
+                "active": false
+              }
+            ]
+          },
+          {
+            "type": "toggle",
+            "states": [
+              {
+                "text": "> MEDICAL BAY :: POWER ON",
+                "active": true
+              },
+              {
+                "text": "> MEDICAL BAY :: POWER OFF",
+                "active": false
+              }
+            ]
+          },
+          {
+            "type": "toggle",
+            "states": [
+              {
+                "text": "> ENGINEERING BAY :: POWER OFF",
+                "active": false
+              },
+              {
+                "text": "> ENGINEERING BAY :: POWER ON",
+                "active": true
+              }
+            ]
+          },
+          {
+            "type": "toggle",
+            "states": [
+              {
+                "text": "> CONTAINMENT AREA :: POWER ON",
+                "active": true
+              },
+              {
+                "text": "> CONTAINMENT AREA :: POWER OFF",
+                "active": false
+              }
+            ]
+          },
+          {
+            "type": "toggle",
+            "states": [
+              {
+                "text": "> COMMAND CENTER :: POWER ON",
+                "active": true
+              },
+              {
+                "text": "> COMMAND CENTER :: POWER OFF",
+                "active": false
+              }
+            ]
+          },
+          {
+            "type": "toggle",
+            "states": [
+              {
+                "text": "> LIVING QUARTERS :: POWER OFF",
+                "active": true
+              },
+              {
+                "text": "> LIVING QUARTERS :: POWER ON",
+                "active": false
+              }
+            ]
+          },
+          "",
           {
             "text": "< BACK",
             "target": "engineering",
