@@ -49,6 +49,7 @@ interface AppState {
 
     renderScanlines: boolean; // should scanlines be enabled?
     powerState: Record<string, boolean>; // Add this line
+    isPromptActive: boolean; // Add this line to track active prompts
 }
 
 enum DialogType {
@@ -128,6 +129,7 @@ class Phosphor extends Component<any, AppState> {
             status: AppStatus.Unset,
             renderScanlines: true, // TODO: support option to disable this effect
             powerState: {}, // Initialize powerState as an empty object
+            isPromptActive: false, // New state to track active prompt
         };
 
         this._changeScreen = this._changeScreen.bind(this);
@@ -143,37 +145,38 @@ class Phosphor extends Component<any, AppState> {
             activeDialogId,
             renderScanlines,
         } = this.state;
-
+    
         return (
             <div className="phosphor">
                 <section className={"__main__"} ref={this._containerRef}>
                     {activeScreenId && this._renderScreen()}
                 </section>
-
+    
                 {activeDialogId && this._renderDialog()}
-
-                {/* Input field for user commands */}
-                <div className="terminal-input">
-                    <input
-                        type="text"
-                        autoFocus
-                        placeholder="Enter command..."
-                        onKeyDown={this._handleInputKeyDown}
-                        style={{
-                            width: "100%",
-                            background: "black",
-                            color: "white",
-                            border: "none",
-                            outline: "none",
-                            fontSize: "1rem",
-                        }}
-                    />
-                </div>
-
+    
+                {/* Input field for user commands - only when a prompt is active */}
+                {this.state.isPromptActive && (
+                    <div className="terminal-input">
+                        <input
+                            type="text"
+                            autoFocus
+                            placeholder="Enter command..."
+                            onKeyDown={this._handleInputKeyDown}
+                            style={{
+                                width: "100%",
+                                background: "transparent",
+                                color: "white",
+                                border: "none",
+                                outline: "none",
+                                fontSize: "1rem",
+                            }}
+                        />
+                    </div>
+                )}
+    
                 {/* scanlines should be the last child */}
                 {renderScanlines && <Scanlines />}
             </div>
-
         );
     }
 
@@ -590,6 +593,15 @@ class Phosphor extends Component<any, AppState> {
 
         // prompt
         if (element.type === ScreenDataType.Prompt) {
+            if (!element.prompt || !element.commands) {
+                console.warn("Invalid Prompt data detected:", element);
+                return null; // Avoid crashing React when prompt data is invalid
+            }
+        
+            console.log("Rendering Prompt:", element.prompt); // Debug log
+        
+            this.setState({ isPromptActive: true });
+        
             return (
                 <Prompt
                     key={key}
@@ -597,7 +609,10 @@ class Phosphor extends Component<any, AppState> {
                     disabled={!!this.state.activeDialogId}
                     prompt={element.prompt}
                     commands={element.commands}
-                    onCommand={this._handlePromptCommand}
+                    onCommand={(command: string, args?: any) => {
+                        this._handlePromptCommand(command, args);
+                        this.setState({ isPromptActive: false });
+                    }}
                 />
             );
         }
@@ -819,6 +834,25 @@ class Phosphor extends Component<any, AppState> {
     
             // Clear the input field
             (event.target as HTMLInputElement).value = "";
+        }
+    }
+    private _processCommand(command: string): void {
+        switch (command.toLowerCase()) {
+            case "help":
+                console.log("Available commands: HELP, EXIT, REBOOT");
+                break;
+    
+            case "exit":
+                console.log("Exiting terminal...");
+                break;
+    
+            case "reboot":
+                console.log("Rebooting system...");
+                break;
+    
+            default:
+                console.log(`Unknown command: ${command}`);
+                break;
         }
     }
 }
