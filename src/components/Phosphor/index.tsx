@@ -49,6 +49,7 @@ interface AppState {
 
     renderScanlines: boolean; // should scanlines be enabled?
     powerState: Record<string, boolean>; // Add this line
+    isPromptActive: boolean; // Add this line to track active prompts
 }
 
 enum DialogType {
