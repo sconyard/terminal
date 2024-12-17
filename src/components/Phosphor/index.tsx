@@ -152,6 +152,24 @@ class Phosphor extends Component<any, AppState> {
 
                 {activeDialogId && this._renderDialog()}
 
+                {/* Input field for user commands */}
+                <div className="terminal-input">
+                    <input
+                        type="text"
+                        autoFocus
+                        placeholder="Enter command..."
+                        onKeyDown={this._handleInputKeyDown}
+                        style={{
+                            width: "100%",
+                            background: "black",
+                            color: "white",
+                            border: "none",
+                            outline: "none",
+                            fontSize: "1rem",
+                        }}
+                    />
+                </div>
+
                 {/* scanlines should be the last child */}
                 {renderScanlines && <Scanlines />}
             </div>
@@ -787,6 +805,20 @@ class Phosphor extends Component<any, AppState> {
                 this._changeScreen(linkTarget.target);
                 return;
             }
+        }
+    }
+    private _handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+        if (event.key === "Enter") {
+            const input = (event.target as HTMLInputElement).value.trim();
+            console.log("User Command:", input);
+    
+            // Process the input (Example: you can parse commands here)
+            if (input) {
+                this._processCommand(input);
+            }
+    
+            // Clear the input field
+            (event.target as HTMLInputElement).value = "";
         }
     }
 }
