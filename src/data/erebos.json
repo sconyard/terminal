@@ -209,7 +209,7 @@
           "=======================",
           {
             "type": "link",
-            "text": "Enter Engineering access passcard ...",
+            "text": "Enter Engineering access passcard to access additional sub-routines ...",
             "target": "engineeringadmin"
           },
           {
@@ -226,7 +226,7 @@
           "Power Grid Status",
           "=================",
           "",
-          "STATUS: POWER OUTPUT BEYOND MAXIMUM",
+          "STATUS: POWER OUTPUT BEYOND MAXIMUM FAILSAFE LEVELS",
           "STATUS: POWER OUTPUT FAILS IN >60 HOURS",
           "=======================",
           "",
@@ -392,7 +392,7 @@
         "id": "medlogs",
         "type": "screen",
         "content": [
-          "Medical triage logs",
+          "Medical logs",
           "======",
           "RECORDS INCOMPLETE",
           "DISPLAYING AVAILABLE ENTRIES",
@@ -586,11 +586,11 @@
             "type": "toggle",
             "states": [
               {
-                "text": "> HANAGAR BAY :: AUTO SHIP DEPARTURE AND DOCKING :: ENABLED",
+                "text": "> HANGAR BAY :: AUTO SHIP DEPARTURE AND DOCKING :: ENABLED",
                 "active": false
               },
               {
-                "text": "> HANAGAR BAY :: AUTO SHIP DEPARTURE AND DOCKING :: DISABLED",
+                "text": "> HANGAR BAY :: AUTO SHIP DEPARTURE AND DOCKING :: DISABLED",
                 "active": true
               }
             ]
@@ -631,13 +631,18 @@
         "id": "research",
         "type": "screen",
         "content": [
-          "Containment",
+          "Research Subsystem",
           "================",
           "",
           {
-            "text": "> ACCESS ARTIFACT LOGS",
+            "text": "> ACCESS RESEARCH LOGS",
             "type": "link",
             "target": "artifactlogs"
+          },
+          {
+            "text": "> CONTAINMENT READINGS",
+            "type": "link",
+            "target": "readings"
           },
           {
             "text": "< BACK",
@@ -647,40 +652,273 @@
         ]
       },
       {
-        "id": "artifactlogs",
+        "id": "readings",
         "type": "screen",
         "content": [
-          "Artifact Logs",
-          "=============",
+          "Containment Readings",
+          "====================",
           "",
-          "LOG STATUS: CORRUPTED",
-          "ANOMALY DETECTED: TEMPORAL FEEDBACK LOOP.",
+          "CURRENT STATUS:",
+          "",
+          "CONTAINMENT FIELD STABILITY: **74%**",
+          "TEMPORAL ANOMALY INTENSITY: **UNMEASURABLE**",
+          "ANOMALY RADIUS: **15 kilometers** (Expanding)",
+          "",
+          "ENERGY SIGNATURES DETECTED:",
+          "- **Primary**: Unknown, localized.",
+          "- **Secondary**: Spiking intermittently at 4.2 THz.",
+          "",
+          "READING LOGS:",
+          "",
+          {
+            "text": "> TIME DILATION LOG",
+            "type": "link",
+            "target": "timedilation"
+          },
+          {
+            "text": "> FIELD INTEGRITY REPORT",
+            "type": "link",
+            "target": "fieldintegrity"
+          },
+          "",
+          "WARNINGS:",
+          "- Containment breach likelihood at 65% threshold.",
+          "- Field destabilization observed at peripheral edges.",
           "",
           {
             "text": "< BACK",
-            "target": "research",
+            "target": "artifactlogs",
             "type": "link"
           }
         ]
-      }
-    ],
-    "dialogs": [
+      },
+      {
+        "id": "timedilation",
+        "type": "screen",
+        "content": [
+          "Time Dilation Log",
+          "====================",
+          "",
+          "LAST EVENT 3750 days old ... ",
+          "OBSERVED EFFECTS:",
+          "- **T-01**: Personnel reported 'lag' in movement perception (~0.4s delay).",
+          "- **T-07**: Object dropped into field reappeared **6 seconds later**.",
+          "- **T-12**: Drone experienced **33-second temporal loop** before failing.",
+          "",
+          "NOTES:",
+          "Time dilation is unpredictable. Effects range from minor lag to full temporal loops. Further proximity tests are impossible without compromising safety.",
+          "",
+          "RECOMMENDATION:",
+          "Maintain all personnel outside anomaly radius. Drones are to be remotely operated.",
+          "",
+          {
+            "text": "< BACK",
+            "target": "readings",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "fieldintegrity",
+        "type": "screen",
+        "content": [
+          "Field Integrity Report",
+          "====================",
+          "",
+          "CURRENT FIELD STATUS:",
+          "- Stability: **34%**",
+          "- Containment Strength: **Failing**",
+          "",
+          "NOTES:",
+          "Containment fields are beginning to destabilize under pressure from the artifact's energy emissions. Automated systems are attempting to compensate, but integrity loss will accelerate without intervention.",
+          "",
+          "RECOMMENDATION:",
+          "Field generators must be reinforced. Prepare fallback measures for breach response.",
+          "EVACUATE THE STATION AND SETUP EXCLUSION ZONE",
+          "",
+          {
+            "text": "< BACK",
+            "target": "readings",
+            "type": "link"
+          }
+        ]
+      },
+    {
+      "id": "artifactlogs",
+      "type": "screen",
+      "content": [
+        "Artifact Logs",
+        "======",
+        "RECORDS CORRUPTED",
+        "DISPLAYING AVAILABLE ENTRIES",
+        "======",
+        "SELECT AN ENTRY",
+        "",
         {
-            "id": "dialog1",
-            "type": "alert",
-            "content": [
-                "This is the first line in the dialog.",
-                "And this is the second line.",
-                "Press <enter>, <esc>, or click anywhere to close this dialog."
-            ]
+          "text": "> AR-001",
+          "type": "link",
+          "target": "AR-001"
         },
         {
-            "id": "lockedDialog",
-            "type": "alert",
-            "content": [
-                "This is a locked link. You'll need to <shift>+click to activate it.",
-                "Press <enter>, <esc>, or click anywhere to close this dialog."
-            ]
+          "text": "> AR-274",
+          "type": "link",
+          "target": "AR-274"
+        },
+        {
+          "text": "> AR-876",
+          "type": "link",
+          "target": "AR-876"
+        },
+        {
+          "text": "> AR-134",
+          "type": "link",
+          "target": "AR-134"
+        },
+        {
+          "text": "< BACK",
+          "target": "menu",
+          "type": "link"
         }
+      ]
+    },
+    {
+      "id": "AR-001",
+      "type": "screen",
+      "content": [
+        "Research Log Entry",
+        "=================",
+        "",
+        "ENTRY ID: AR-001",
+        "AUTHOR: Dr. Adrian Voss, Temporal Physics Lead",
+        "",
+        "DETAILS:",
+        "The artifact was discovered embedded deep within an asteroid during routine excavation. Its surface reflects no light, absorbs all known forms of energy, and exhibits a faint humming vibration detectable at 23 Hz. Testing equipment malfunctions within a 3-meter radius.",
+        "",
+        "Initial scans revealed spatial distortions—objects placed too close to the artifact disappear and reappear seconds later, often displaced in location and orientation. Early casualties included a drone operator who vanished for **18 seconds** and returned with nonsensical reports of 'seeing the station fracture.'",
+        "",
+        "NOTES:",
+        "Temporal disruption is beyond anything previously recorded. The artifact appears to 'bend' time locally, creating unpredictable eddies of causality. It remains unclear if these anomalies are deliberate or residual effects.",
+        "",
+        "RECOMMENDATION:",
+        "Establish a 10-meter exclusion zone around the artifact. All personnel must wear tracking beacons and report any unusual temporal experiences immediately.",
+        "",
+        "=================",
+        "",
+        {
+          "text": "< BACK",
+          "target": "artifactlogs",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "id": "AR-274",
+      "type": "screen",
+      "content": [
+        "Research Log Entry",
+        "=================",
+        "",
+        "ENTRY ID: AR-274",
+        "AUTHOR: Dr. Loretta Kwan, Quantum Mechanic Specialist",
+        "",
+        "DETAILS:",
+        "Artifact interaction experiments have escalated. Objects introduced into its field exhibit **time inversion** phenomena—decaying fruit reverts to pristine condition, liquids refreeze, and damaged machinery repairs itself spontaneously.",
+        "",
+        "Personnel exposure is increasingly concerning. Technician Falk reported 'missing' two hours, despite security footage showing him standing motionless the entire time. Brain scans post-exposure revealed **neurological patterns consistent with extreme sleep deprivation**.",
+        "",
+        "NOTES:",
+        "The artifact seems to manipulate entropy—time's arrow itself. This defies known physical laws. What remains unclear is whether the artifact's influence is spreading. Observed anomalies have increased in frequency, even outside the containment chamber.",
+        "",
+        "RECOMMENDATION:",
+        "Cease experiments immediately. Continued exposure risks temporal destabilization. Establish redundancies for station systems in case of widespread anomalies.",
+        "",
+        "=================",
+        "",
+        {
+          "text": "< BACK",
+          "target": "artifactlogs",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "id": "AR-876",
+      "type": "screen",
+      "content": [
+        "Research Log Entry",
+        "=================",
+        "",
+        "ENTRY ID: AR-876",
+        "AUTHOR: Dr. Sylvia Trent, Containment Supervisor",
+        "",
+        "DETAILS:",
+        "Containment breaches have occurred, though no physical damage is evident. Logs show **containment doors opening and closing simultaneously** across multiple timelines. Guards stationed outside describe echoes of footsteps, voices—sometimes their own.",
+        "",
+        "Monitoring equipment shows temporal loops forming around the artifact, where events repeat at unpredictable intervals. A routine systems diagnostic was observed **playing in reverse**.",
+        "",
+        "NOTES:",
+        "Containment is failing. The artifact's influence is expanding beyond its immediate proximity. I observed my reflection move independently of me for several seconds—it smiled.",
+        "",
+        "RECOMMENDATION:",
+        "Begin preparations for station-wide evacuation. Artifact containment must be prioritized, but we must acknowledge the possibility of failure.",
+        "",
+        "=================",
+        "",
+        {
+          "text": "< BACK",
+          "target": "artifactlogs",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "id": "AR-134",
+      "type": "screen",
+      "content": [
+        "Research Log Entry",
+        "=================",
+        "",
+        "ENTRY ID: AR-134",
+        "AUTHOR: Dr. Horatio Wells, Temporal Anomaly Theorist",
+        "",
+        "DETAILS:",
+        "The artifact is no longer dormant. Spontaneous **temporal fractures** propagate from its surface, visible as distortions in the air—ripples that shimmer briefly before vanishing. Personnel report experiencing fragmented memories of events that never occurred.",
+        "",
+        "One incident involved a researcher **'meeting himself'** in the containment chamber. The second version of him screamed incoherently before vanishing in a burst of light. Containment shields now fail intermittently, rendering temporal stabilization impossible.",
+        "",
+        "NOTES:",
+        "I have concluded that the artifact does not belong in this time or space. It may be a remnant of an advanced civilization or something far worse. We are witnessing a **temporal wound**, and our station is the dressing being torn apart.",
+        "",
+        "RECOMMENDATION:",
+        "The station must be scuttled. The artifact cannot be destroyed, but it can be buried. Failure to act risks spreading its anomaly beyond the station, with consequences for reality as we understand it.",
+        "",
+        "=================",
+        "",
+        {
+          "text": "< BACK",
+          "target": "artifactlogs",
+          "type": "link"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+      {
+        "id": "dialog1",
+        "type": "alert",
+        "content": [
+          "This is the first line in the dialog.",
+          "And this is the second line.",
+          "Press <enter>, <esc>, or click anywhere to close this dialog."
+        ]
+      },
+      {
+        "id": "lockedDialog",
+        "type": "alert",
+        "content": [
+          "This is a locked link. You'll need to <shift>+click to activate it.",
+          "Press <enter>, <esc>, or click anywhere to close this dialog."
+        ]
+      }
     ]
-}
+  }
