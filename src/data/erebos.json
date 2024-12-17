@@ -1,7 +1,7 @@
 {
     "config": {
       "name": "Erebos Research Station Terminal",
-      "author": "@your_name",
+      "author": "Simon Conyard",
       "comment": "Phosphor content file for the 'Erebos Research Station' module for the Mothership RPG."
     },
     "screens": [
@@ -153,13 +153,27 @@
         "id": "engineering",
         "type": "screen",
         "content": [
-          "Engineering Bay",
+          "Engineering",
           "===============",
           "",
           {
             "text": "> CHECK POWER GRID STATUS",
             "type": "link",
             "target": "powerstatus"
+          },
+          {
+            "type": "prompt",
+            "prompt": "Enter Engineering access passcode ...",
+            "className": "cursor",
+            "commands": [
+                {
+                    "command": "1234",
+                    "action": {
+                        "type": "link",
+                        "target": "engineeringadmin"
+                    }
+                }
+            ]
           },
           {
             "text": "< BACK",
@@ -175,9 +189,23 @@
           "Power Grid Status",
           "=================",
           "",
-          "STATUS: UNSTABLE",
-          "RECOMMENDATION: MANUAL REPAIR REQUIRED.",
+          "STATUS: POWER OUTPUT BEYOND MAXIMUM",
+          "STATUS: POWER OUTPUT FAILS IN 60 HOURS",
+          "=======================",
           "",
+          {
+            "text": "< BACK",
+            "target": "engineering",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "engineeringadmin",
+        "type": "screen",
+        "content": [
+          "Engineering Admin",
+          "=================",
           {
             "text": "< BACK",
             "target": "engineering",
@@ -234,7 +262,12 @@
             "text": "> 445-D21",
             "type": "link",
             "target": "445-D21"
-          }   
+          },  
+          {
+            "text": "< BACK",
+            "target": "medbay",
+            "type": "link"
+          } 
         ]
       },
       {
