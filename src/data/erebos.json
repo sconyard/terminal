@@ -552,7 +552,7 @@
         "id": "systemadmin",
         "type": "screen",
         "content": [
-          "Engineering Admin",
+          "system administration",
           "=================",
           "",
           {
@@ -564,9 +564,15 @@
               },
               {
                 "text": "> HANAGAR BAY :: AUTO SHIP DEPARTURE AND DOCKING :: DISABLED",
-                "active": false
+                "active": true
               }
             ]
+          },
+          "...",
+          {
+            "text": "< BACK",
+            "target": "commandcenter",
+            "type": "link"
           }
         ]
       },
