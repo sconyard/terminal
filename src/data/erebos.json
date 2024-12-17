@@ -31,7 +31,7 @@
           "=======================",
           {
             "type": "link",
-            "text": "ACTIVE STATION ALERTS",
+            "text": "> ACTIVE STATION ALERTS",
             "target": "stationalert"
           },
           {
@@ -68,6 +68,41 @@
         "=======================",
         "SYSTEM ACCESS IS MONITORED BY BIO-MARKERS AND OPTICAL FOOTAGE",
         "ALL ACCESS IS LOGGED"
+        ]
+      },
+      {
+        "id": "stationalert",
+        "type": "alert",
+        "content": [
+          "EVACUATION ORDER",
+          "====================",
+          "",
+          "ALERT: CRITICAL FAILURE DETECTED",
+          "",
+          "All personnel are to proceed to designated evacuation points immediately.",
+          "- CONTAINMENT LOCKDOWN in progress.",
+          "",
+          "PRIORITY ORDER:",
+          "1. Proceed to COMMAND CENTER for status verification.",
+          "2. Initiate EMERGENCY LOCKDOWN PROCEDURES where possible.",
+          "3. Abandon all non-essential equipment.",
+          "4. Any personnel unable to travel will be loaded into cryogenics pods.",
+          "",
+          "PERSONNEL SAFETY NOTICE:",
+          "- Do NOT engage or approach unidentified entities.",
+          "- Follow all LOCKDOWN and CONTAINMENT procedures.",
+          "- Follow pre-determined escape routes on station maps.",
+          "- Cryogenics pods are to remain active for emergency stasis.",
+          "",
+          "STAY CALM. FOLLOW ORDERS. PROCEED WITH CAUTION.",
+          "",
+          "- Apex Dynamics Emergency Protocols",
+          "=======================",
+          {
+            "text": "< BACK",
+            "target": "menu",
+            "type": "link"
+          }
         ]
       },
       {
@@ -630,40 +665,7 @@
       }
     ],
       "dialogs": [
-    {
-      "id": "stationalert",
-      "type": "screen",
-      "content": [
-        "EVACUATION ORDER",
-        "====================",
-        "",
-        "ALERT: CRITICAL FAILURE DETECTED",
-        "",
-        "All personnel are to proceed to designated evacuation points immediately.",
-        "- CONTAINMENT LOCKDOWN in progress.",
-        "",
-        "PRIORITY ORDER:",
-        "1. Proceed to COMMAND CENTER for status verification.",
-        "2. Initiate EMERGENCY LOCKDOWN PROCEDURES where possible.",
-        "3. Abandon all non-essential equipment.",
-        "4. Any personnel unable to travel will be loaded into cryogenics pods.",
-        "",
-        "PERSONNEL SAFETY NOTICE:",
-        "- Do NOT engage or approach unidentified entities.",
-        "- Follow all LOCKDOWN and CONTAINMENT procedures.",
-        "- Follow pre-determined escape routes on station maps.",
-        "- Cryogenics pods are to remain active for emergency stasis.",
-        "",
-        "STAY CALM. FOLLOW ORDERS. PROCEED WITH CAUTION.",
-        "",
-        "- Apex Dynamics Emergency Protocols",
-        "=======================",
-        {
-          "text": "< BACK",
-          "target": "menu",
-          "type": "link"
-        }
-      ]
+    
     }
   ]
 }
