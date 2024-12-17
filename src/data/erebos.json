@@ -663,5 +663,24 @@
           }
         ]
       }
+    ],
+    "dialogs": [
+        {
+            "id": "dialog1",
+            "type": "alert",
+            "content": [
+                "This is the first line in the dialog.",
+                "And this is the second line.",
+                "Press <enter>, <esc>, or click anywhere to close this dialog."
+            ]
+        },
+        {
+            "id": "lockedDialog",
+            "type": "alert",
+            "content": [
+                "This is a locked link. You'll need to <shift>+click to activate it.",
+                "Press <enter>, <esc>, or click anywhere to close this dialog."
+            ]
+        }
     ]
 }
