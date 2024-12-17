@@ -66,7 +66,9 @@
         "content": [
           "Cryogenics",
           "=============",
-          "",
+          "... FATAL ERROR DETECTED IN CRYO POD 1 ...",
+          "... REVIEW CRYO POD LOGS FOR ACTIONS ...",
+          "=============",
           {
             "text": "> VIEW CRYO POD LOGS",
             "type": "link",
@@ -86,13 +88,19 @@
           "Cryo Pod Logs",
           "===============",
           "",
-          "POD 1: EVACUATION STATUS INCOMPLETE",
+          "POD 1: CYCLE STATUS INCOMPLETE",
+          "=======================",
+          "POD 1: UNSUPPORTED BIOMASS",
           "POD 1: LIFESIGNS INCOMPLETE",
-          "EVACUATION STATUS: NULL",
-          "POD 1: NO LOG ENTRY NAME FOR ENTITY IN POD",
+          "=======================",
+          "ATTEMPTING EVACUATION AND CONTAINMENT",
+          "EVACUATION STATUS: INCOMPLETE",
+          "=======================",
+          "POD 1: NO ENTRY NAME FOR ENTITY",
+          "=======================",
           "LAST RECORDED SYSTEM PURGE DATE: 366 DAYS AGO",
-          "SYSTEM PURGE RECOMMENDED",
-          "",
+          "SYSTEM PURGE POD 1 RECOMMENDED",
+          "=======================",
           {
                 "type": "toggle",
                 "states": [
@@ -102,16 +110,36 @@
                     },
                     {
                         "active": false,
-                        "text": "> SYSTEM PURGE COMMENCING, PLEASE VACATE AREA AROUND POD 1 ... CONFIRM?"
+                        "text": "> SYSTEM PURGE COMMENCING .... PLEASE VACATE AREA AROUND POD 1 ... CONFIRM?"
+                    },
+                    {
+                      "active": false,
+                      "text": "> ..."
                     },
                     {
                         "active": false,
                         "text": "> SYSTEM PURGE COMPLETE ...  AWAITING RESULTS OF BIOMASS ANALYSIS ..."
                     },
                     {
+                      "active": false,
+                      "text": "> ..."
+                    },
+                    {
                         "active": false,
                         "text": "> BIOMASS UNRECOGONISED ... POSIBLE XENO ENCOUNTED ... ADDED TO CONTAINMENT LOGS "
-                    }
+                    },
+                    {
+                        "active": false,
+                        "text": "> PURGE COMPLETE"
+                    },
+                    {
+                        "active": false,
+                        "text": "> ..."
+                    },
+                    {
+                      "active": false,
+                      "text": "> ..."
+                  }
                 ]
             },
           {
@@ -161,13 +189,13 @@
         "id": "medbay",
         "type": "screen",
         "content": [
-          "Medbay",
+          "Medical",
           "======",
           "",
           {
-            "text": "> ACCESS BIO-POD DATA",
+            "text": "> ACCESS TRIAGE LOGS",
             "type": "link",
-            "target": "biopod"
+            "target": "triage"
           },
           {
             "text": "< BACK",
@@ -177,15 +205,31 @@
         ]
       },
       {
-        "id": "biopod",
+        "id": "triage",
         "type": "screen",
         "content": [
-          "Bio-Pod Data",
-          "============",
-          "",
-          "WARNING: DATA CORRUPTED.",
-          "SUBJECT IDENTIFICATION: NON-HUMAN ENTITY DETECTED.",
-          "",
+        "Medical Log Entry",
+        "=================",
+        "",
+        "ENTRY ID: 455-A12",
+        "DATE: [EVACUATION TIMESTAMP]",
+        "AUTHOR: Dr. Elias K. Varren, Chief Medical Officer",
+        "",
+        "DETAILS:",
+        "Subject exhibits extraordinary **thermal resistance**. Conventional heat-based sterilization techniques proved entirely ineffective, even under sustained exposure beyond 1800°C. The outer dermal layer remains intact, showing no signs of charring or breakdown.",
+        "",
+        "However, subject integrity is not absolute. Repeated exposure to acidic compounds induces noticeable structural weakening. Microscopic fissures appear to propagate along biologically 'engineered' lines within the tissue—these fractures spread progressively, resulting in cascading failures of the skeletal structure. Specimens subjected to prolonged acid baths liquefy internally after 4-7 minutes, though the outer form remains disturbingly intact.",
+        "",
+        "NOTES:",
+        "The physiology of the specimen is unlike any organism I have studied. Its resilience borders on the impossible—no carbon-based life should exhibit such properties. Is it engineered? Evolved for war? I cannot say, but this organism feels *designed*.",
+        "",
+        "I attempted treatment out of professional obligation. The injuries, however, were clearly **unsurvivable**—tissue loss and internal hemorrhaging beyond any conceivable repair. It did not respond to anesthetics or stimulants, though the body displayed sporadic muscular contractions post-mortem.",
+        "",
+        "RECOMMENDATION:",
+        "Containment is the only viable course of action. Any efforts at 'treatment' are meaningless, and extended contact presents a clear biological hazard. The focus must shift to understanding and controlling its unique properties.",
+        "",
+        "=================",
+        "",
           {
             "text": "< BACK",
             "target": "medbay",
