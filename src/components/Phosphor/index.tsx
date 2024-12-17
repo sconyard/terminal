@@ -593,8 +593,15 @@ class Phosphor extends Component<any, AppState> {
 
         // prompt
         if (element.type === ScreenDataType.Prompt) {
-            this.setState({ isPromptActive: true }); // Activate input field for prompt
-
+            if (!element.prompt || !element.commands) {
+                console.warn("Invalid Prompt data detected:", element);
+                return null; // Avoid crashing React when prompt data is invalid
+            }
+        
+            console.log("Rendering Prompt:", element.prompt); // Debug log
+        
+            this.setState({ isPromptActive: true });
+        
             return (
                 <Prompt
                     key={key}
@@ -604,7 +611,7 @@ class Phosphor extends Component<any, AppState> {
                     commands={element.commands}
                     onCommand={(command: string, args?: any) => {
                         this._handlePromptCommand(command, args);
-                        this.setState({ isPromptActive: false }); // Deactivate input after command
+                        this.setState({ isPromptActive: false });
                     }}
                 />
             );
