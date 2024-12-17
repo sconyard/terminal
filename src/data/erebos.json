@@ -191,7 +191,7 @@
           "=================",
           "",
           "STATUS: POWER OUTPUT BEYOND MAXIMUM",
-          "STATUS: POWER OUTPUT FAILS IN 60 HOURS",
+          "STATUS: POWER OUTPUT FAILS IN >60 HOURS",
           "=======================",
           "",
           {
@@ -225,11 +225,11 @@
             "type": "toggle",
             "states": [
               {
-                "text": "> MEDICAL :: POWER ON",
+                "text": "> MEDICAL :: POWER OFF",
                 "active": true
               },
               {
-                "text": "> MEDICAL :: POWER OFF",
+                "text": "> MEDICAL :: POWER ON",
                 "active": false
               }
             ]
@@ -264,11 +264,11 @@
             "type": "toggle",
             "states": [
               {
-                "text": "> COMMAND :: POWER ON",
+                "text": "> COMMAND :: POWER OFF",
                 "active": true
               },
               {
-                "text": "> COMMAND :: POWER OFF",
+                "text": "> COMMAND :: POWER ON",
                 "active": false
               }
             ]
@@ -631,7 +631,7 @@
           "",
           {
             "text": "< BACK",
-            "target": "containment",
+            "target": "research",
             "type": "link"
           }
         ]
