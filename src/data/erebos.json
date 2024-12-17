@@ -30,7 +30,7 @@
           "PLEASE SELECT A SUB-SYSTEM",
           "=======================",
           {
-            "type": "dialog",
+            "type": "link",
             "text": "ACTIVE STATION ALERTS",
             "target": "stationalert"
           },
