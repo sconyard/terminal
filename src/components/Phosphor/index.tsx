@@ -127,6 +127,7 @@ class Phosphor extends Component<any, AppState> {
             loadingQueue: [],
             status: AppStatus.Unset,
             renderScanlines: true, // TODO: support option to disable this effect
+            powerState: {}, // Initialize powerState as an empty object
         };
 
         this._changeScreen = this._changeScreen.bind(this);
