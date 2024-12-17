@@ -49,9 +49,9 @@
             "target": "commandcenter"
           },
           {
-            "text": "> SYSTEM",
+            "text": "> RESEARCH",
             "type": "link",
-            "target": "containment"
+            "target": "research"
           },
           {
           "text": "< LOG OUT",
@@ -161,6 +161,7 @@
             "type": "link",
             "target": "powerstatus"
           },
+          "=======================",
           {
             "type": "prompt",
             "prompt": "Enter Engineering access passcode ...",
@@ -211,11 +212,11 @@
             "type": "toggle",
             "states": [
               {
-                "text": "> CRYOGENICS BAY :: POWER ON",
+                "text": "> CRYOGENICS :: POWER ON",
                 "active": true
               },
               {
-                "text": "> CRYOGENICS BAY :: POWER OFF",
+                "text": "> CRYOGENICS :: POWER OFF",
                 "active": false
               }
             ]
@@ -224,11 +225,11 @@
             "type": "toggle",
             "states": [
               {
-                "text": "> MEDICAL BAY :: POWER ON",
+                "text": "> MEDICAL :: POWER ON",
                 "active": true
               },
               {
-                "text": "> MEDICAL BAY :: POWER OFF",
+                "text": "> MEDICAL :: POWER OFF",
                 "active": false
               }
             ]
@@ -237,11 +238,11 @@
             "type": "toggle",
             "states": [
               {
-                "text": "> ENGINEERING BAY :: POWER OFF",
+                "text": "> ENGINEERING :: POWER OFF",
                 "active": false
               },
               {
-                "text": "> ENGINEERING BAY :: POWER ON",
+                "text": "> ENGINEERING :: POWER ON",
                 "active": true
               }
             ]
@@ -250,11 +251,11 @@
             "type": "toggle",
             "states": [
               {
-                "text": "> CONTAINMENT AREA :: POWER ON",
+                "text": "> CONTAINMENT :: POWER ON",
                 "active": true
               },
               {
-                "text": "> CONTAINMENT AREA :: POWER OFF",
+                "text": "> CONTAINMENT :: POWER OFF",
                 "active": false
               }
             ]
@@ -263,11 +264,11 @@
             "type": "toggle",
             "states": [
               {
-                "text": "> COMMAND CENTER :: POWER ON",
+                "text": "> COMMAND :: POWER ON",
                 "active": true
               },
               {
-                "text": "> COMMAND CENTER :: POWER OFF",
+                "text": "> COMMAND :: POWER OFF",
                 "active": false
               }
             ]
@@ -285,7 +286,46 @@
               }
             ]
           },
-          "",
+          {
+              "type": "toggle",
+              "states": [
+                {
+                  "text": "> SECURITY :: POWER OFF",
+                  "active": true
+                },
+                {
+                  "text": "> SECURITY :: POWER ON",
+                  "active": false
+                }
+              ]
+          },
+            {
+              "type": "toggle",
+              "states": [
+                {
+                  "text": "> RESEARCH :: POWER OFF",
+                  "active": true
+                },
+                {
+                  "text": "> RESEARCH :: POWER ON",
+                  "active": false
+                }
+              ]
+          },
+          {
+            "type": "toggle",
+            "states": [
+              {
+                "text": "> HANGAR BAY :: POWER OFF",
+                "active": true
+              },
+              {
+                "text": "> HANGAR BAY :: POWER ON",
+                "active": false
+              }
+            ]
+          },
+          "...",
           {
             "text": "< BACK",
             "target": "engineering",
@@ -486,10 +526,47 @@
             "type": "link",
             "target": "securityfeeds"
           },
+          "======",
+          {
+            "type": "prompt",
+            "prompt": "Enter SYSTEM access passcode ...",
+            "className": "cursor",
+            "commands": [
+                {
+                    "command": "1234",
+                    "action": {
+                        "type": "link",
+                        "target": "systemadmin"
+                    }
+                }
+            ]
+          },
           {
             "text": "< BACK",
             "target": "menu",
             "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "systemadmin",
+        "type": "screen",
+        "content": [
+          "Engineering Admin",
+          "=================",
+          "",
+          {
+            "type": "toggle",
+            "states": [
+              {
+                "text": "> HANAGAR BAY :: AUTO SHIP DEPARTURE AND DOCKING :: ENABLED",
+                "active": false
+              },
+              {
+                "text": "> HANAGAR BAY :: AUTO SHIP DEPARTURE AND DOCKING :: DISABLED",
+                "active": false
+              }
+            ]
           }
         ]
       },
@@ -500,16 +577,15 @@
           "Security Feeds",
           "=============",
           "ERROR IN VIDEO FEEDS",
-          ".............",
-          "|-------------|",
-          "|...MED.BAY...|",
-          "|.............|",
-          "|_____________|",
-          "MOVEMENT DETECTED: CRYOGENICS BAY",
-          "MOVEMENT DETECTED: MED BAY",
-          "MOVEMENT DETECTED: CONTAINMENT",
-          "MOVEMENT DETECTED: ENGINEERING BAY",
-          "FEED STATUS: UNSTABLE",
+          "NO FEEDS AVAILABLE",
+          "=======================",
+          "XENO LIFEFORM DETECTED: CRYOGENICS",
+          "XENO LIFEFORM DETECTED: CONTAINMENT",
+          "=======================",
+          "VIDEO FEED STATUS: OFFLINE",
+          "MOTION CAPTURE SENSORS: OFFLINE",
+          "LIFESIGN ANALYSIS: UNSTABLE",
+          "=======================",
           "",
           {
             "text": "< BACK",
@@ -519,7 +595,7 @@
         ]
       },
       {
-        "id": "containment",
+        "id": "research",
         "type": "screen",
         "content": [
           "Containment",
