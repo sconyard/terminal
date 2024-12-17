@@ -15,7 +15,7 @@
           "Welcome to the Apex Dynamics Control Interface.",
           "",
           {
-            "text": "> LOG IN",
+            "text": "> ACCESS",
             "type": "link",
             "target": "menu"
           }
@@ -25,9 +25,10 @@
         "id": "menu",
         "type": "screen",
         "content": [
-          "Main Menu",
+          "STATION MENU",
           "=========",
-          "",
+          "PLEASE SELECT A SUB-SYSTEM",
+          "=======================",
           {
             "text": "> CRYOGENICS",
             "type": "link",
@@ -53,11 +54,15 @@
             "type": "link",
             "target": "research"
           },
+          "=======================",
           {
           "text": "< LOG OUT",
           "target": "screen0",
           "type": "link"
-        }
+        },
+        "=======================",
+        "SYSTEM ACCESS IS MONITORED BY BIO-MARKERS AND OPTICAL FOOTAGE",
+        "ALL ACCESS IS LOGGED"
         ]
       },
       {
