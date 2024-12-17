@@ -632,7 +632,7 @@
       "dialogs": [
     {
       "id": "stationalert",
-      "type": "alert",
+      "type": "screen",
       "content": [
         "EVACUATION ORDER",
         "====================",
@@ -656,7 +656,13 @@
         "",
         "STAY CALM. FOLLOW ORDERS. PROCEED WITH CAUTION.",
         "",
-        "- Apex Dynamics Emergency Protocols"
+        "- Apex Dynamics Emergency Protocols",
+        "=======================",
+        {
+          "text": "< BACK",
+          "target": "menu",
+          "type": "link"
+        }
       ]
     }
   ]
