@@ -821,6 +821,25 @@ class Phosphor extends Component<any, AppState> {
             (event.target as HTMLInputElement).value = "";
         }
     }
+    private _processCommand(command: string): void {
+        switch (command.toLowerCase()) {
+            case "help":
+                console.log("Available commands: HELP, EXIT, REBOOT");
+                break;
+    
+            case "exit":
+                console.log("Exiting terminal...");
+                break;
+    
+            case "reboot":
+                console.log("Rebooting system...");
+                break;
+    
+            default:
+                console.log(`Unknown command: ${command}`);
+                break;
+        }
+    }
 }
 
 export default Phosphor;
