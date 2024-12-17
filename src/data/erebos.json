@@ -163,18 +163,9 @@
           },
           "=======================",
           {
-            "type": "prompt",
-            "prompt": "Enter Engineering access passcode ...",
-            "className": "cursor",
-            "commands": [
-                {
-                    "command": "1234",
-                    "action": {
-                        "type": "link",
-                        "target": "engineeringadmin"
-                    }
-                }
-            ]
+            "type": "link",
+            "text": "Enter Engineering access passcard ...",
+            "target": "engineeringadmin"
           },
           {
             "text": "< BACK",
@@ -528,18 +519,9 @@
           },
           "======",
           {
-            "type": "prompt",
-            "prompt": "Enter SYSTEM access passcode ...",
-            "className": "cursor",
-            "commands": [
-                {
-                    "command": "1234",
-                    "action": {
-                        "type": "link",
-                        "target": "systemadmin"
-                    }
-                }
-            ]
+            "type": "link",
+            "text": "Enter Station Administrator passcard ...",
+            "target": "systemadmin"
           },
           {
             "text": "< BACK",
