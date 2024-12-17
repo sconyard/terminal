@@ -128,6 +128,7 @@ class Phosphor extends Component<any, AppState> {
             status: AppStatus.Unset,
             renderScanlines: true, // TODO: support option to disable this effect
             powerState: {}, // Initialize powerState as an empty object
+            isPromptActive: false, // New state to track active prompt
         };
 
         this._changeScreen = this._changeScreen.bind(this);
@@ -143,37 +144,38 @@ class Phosphor extends Component<any, AppState> {
             activeDialogId,
             renderScanlines,
         } = this.state;
-
+    
         return (
             <div className="phosphor">
                 <section className={"__main__"} ref={this._containerRef}>
                     {activeScreenId && this._renderScreen()}
                 </section>
-
+    
                 {activeDialogId && this._renderDialog()}
-
-                {/* Input field for user commands */}
-                <div className="terminal-input">
-                    <input
-                        type="text"
-                        autoFocus
-                        placeholder="Enter command..."
-                        onKeyDown={this._handleInputKeyDown}
-                        style={{
-                            width: "100%",
-                            background: "black",
-                            color: "white",
-                            border: "none",
-                            outline: "none",
-                            fontSize: "1rem",
-                        }}
-                    />
-                </div>
-
+    
+                {/* Input field for user commands - only when a prompt is active */}
+                {this.state.isPromptActive && (
+                    <div className="terminal-input">
+                        <input
+                            type="text"
+                            autoFocus
+                            placeholder="Enter command..."
+                            onKeyDown={this._handleInputKeyDown}
+                            style={{
+                                width: "100%",
+                                background: "transparent",
+                                color: "white",
+                                border: "none",
+                                outline: "none",
+                                fontSize: "1rem",
+                            }}
+                        />
+                    </div>
+                )}
+    
                 {/* scanlines should be the last child */}
                 {renderScanlines && <Scanlines />}
             </div>
-
         );
     }
 
@@ -590,6 +592,8 @@ class Phosphor extends Component<any, AppState> {
 
         // prompt
         if (element.type === ScreenDataType.Prompt) {
+            this.setState({ isPromptActive: true }); // Activate input field for prompt
+
             return (
                 <Prompt
                     key={key}
@@ -597,7 +601,10 @@ class Phosphor extends Component<any, AppState> {
                     disabled={!!this.state.activeDialogId}
                     prompt={element.prompt}
                     commands={element.commands}
-                    onCommand={this._handlePromptCommand}
+                    onCommand={(command: string, args?: any) => {
+                        this._handlePromptCommand(command, args);
+                        this.setState({ isPromptActive: false }); // Deactivate input after command
+                    }}
                 />
             );
         }
