@@ -193,9 +193,9 @@
           "======",
           "",
           {
-            "text": "> ACCESS TRIAGE LOGS",
+            "text": "> ACCESS MEDICAL LOGS",
             "type": "link",
-            "target": "triage"
+            "target": "medlogs"
           },
           {
             "text": "< BACK",
@@ -205,14 +205,46 @@
         ]
       },
       {
-        "id": "triage",
+        "id": "medlogs",
+        "type": "screen",
+        "content": [
+          "Medical triage logs",
+          "======",
+          "RECORDS INCOMPLETE",
+          "DISPLAYING AVAILABLE ENTRIES",
+          "======",
+          "SELECT AN ENTRY",
+          "",
+          {
+            "text": "> 445-A12",
+            "type": "link",
+            "target": "445-A12"
+          },
+          {
+            "text": "> 445-B09",
+            "type": "link",
+            "target": "445-B09"
+          },
+          {
+            "text": "> 445-C14",
+            "type": "link",
+            "target": "445-C14"
+          },
+          {
+            "text": "> 445-D21",
+            "type": "link",
+            "target": "445-D21"
+          }   
+        ]
+      },
+      {
+        "id": "445-A12",
         "type": "screen",
         "content": [
         "Medical Log Entry",
         "=================",
         "",
         "ENTRY ID: 455-A12",
-        "DATE: [EVACUATION TIMESTAMP]",
         "AUTHOR: Dr. Elias K. Varren, Chief Medical Officer",
         "",
         "DETAILS:",
@@ -232,8 +264,100 @@
         "",
           {
             "text": "< BACK",
-            "target": "medbay",
+            "target": "medlogs",
             "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "445-B09",
+        "type": "screen",
+        "content": [
+          "Medical Log Entry",
+          "=================",
+          "",
+          "ENTRY ID: 455-B09",
+          "AUTHOR: Dr. Victoria Nguen, Biomechanical Research Lead",
+          "",
+          "DETAILS:",
+          "Specimen remains biologically fascinating but uncooperative. Attempts to extract viable samples have proven arduous. Its cellular structure actively resists external interference, rapidly neutralizing cutting tools and chemical agents.",
+          "",
+          "Repeated exposure to acid (HCl variant) reveals points of failure along stress fractures, suggesting an internal lattice-like network designed to distribute damage. Yet, even as degradation begins, the specimen exhibits a kind of **reactive healing**, as if the body prioritizes structural cohesion over organ preservation.",
+          "",
+          "NOTES:",
+          "Every fiber of its being suggests **purpose**—a machine in flesh. Whether this is natural evolution or deliberate engineering eludes me, but it demands our full scientific attention.",
+          "",
+          "Its silence is unnerving. While other organisms cry out in pain, this one simply... persists. There is no struggle, no life as we understand it. The question remains: is it alive, or merely operating?",
+          "",
+          "RECOMMENDATION:",
+          "Further autopsy work should focus on isolating its reactive processes. Understanding its structural resilience could have profound military and industrial applications.",
+          "",
+          "=================",
+          "",
+          {
+            "text": "< BACK",
+            "type": "link",
+            "target": "medlogs"
+          }
+        ]
+      },
+      {
+        "id": "445-C14",
+        "type": "screen",
+        "content": [
+          "Medical Log Entry",
+          "=================",
+          "",
+          "ENTRY ID: 455-C14",
+          "AUTHOR: Dr. Miriam Devereux, Senior Physician",
+          "",
+          "DETAILS:",
+          "The subject—if I can even call it that—was brought to me as a curiosity. Its body was broken, scorched, and corroded, and yet it still **moved**. Not in anger or fear, but in something quieter. Reflex? Instinct? I can’t say.",
+          "",
+          "I administered sedatives, knowing they would likely do nothing. I applied stabilizers and tried to address the acidic damage, futile though it was. But the creature—no, *being*—remained still as I worked, as if it understood my intent. Its body twitched once, in a way I can only describe as resignation.",
+          "",
+          "NOTES:",
+          "I wonder, does it feel pain? Or sorrow? If this is an engineered creation, was it abandoned like we now abandon this station? I can’t help but feel it deserved more than to be dissected and discarded.",
+          "",
+          "RECOMMENDATION:",
+          "Containment protocols are valid, but I urge restraint. Study the being, yes, but respect its existence. If it is alive, we owe it that much.",
+          "",
+          "=================",
+          "",
+          {
+            "text": "< BACK",
+            "type": "link",
+            "target": "medlogs"
+          }
+        ]
+      },
+      {
+        "id": "445-D21",
+        "type": "screen",
+        "content": [
+          "Medical Log Entry",
+          "=================",
+          "",
+          "ENTRY ID: 455-D21",
+          "AUTHOR: Dr. Garrett M. Hale, Xenobiology Specialist",
+          "",
+          "DETAILS:",
+          "Subject tissue samples exhibit aggressive behavior under observation. Degradation occurs when exposed to acidic compounds, but fragments display a **self-replicating quality** before collapse. Containment must be absolute. Even small remnants could pose biological risks.",
+          "",
+          "Thermal resistance continues to baffle analysis. Specimen was exposed to temperatures exceeding 2100°C with no observable damage. The implications are staggering—this creature is either an evolutionary outlier or something far worse.",
+          "",
+          "NOTES:",
+          "We are not prepared to deal with this. While containment remains operational, my confidence in the station's safeguards is dwindling. If even one fragment breaches containment, the consequences could be catastrophic.",
+          "",
+          "RECOMMENDATION:",
+          "Immediate evacuation was the correct decision. Containment should be maintained, but at the first breach, **scuttle the station**. No risks can be taken.",
+          "",
+          "=================",
+          "",
+          {
+            "text": "< BACK",
+            "type": "link",
+            "target": "medlogs"
           }
         ]
       },
