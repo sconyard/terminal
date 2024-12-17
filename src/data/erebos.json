@@ -72,7 +72,7 @@
       },
       {
         "id": "stationalert",
-        "type": "alert",
+        "type": "screen",
         "content": [
           "EVACUATION ORDER",
           "====================",
