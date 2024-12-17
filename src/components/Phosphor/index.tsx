@@ -21,6 +21,23 @@ import Scanlines from "../Scanlines";
 // preferrably, create a new JSON and load it here
 import json from "../../data/erebos.json";
 
+// ============================
+// Helper functions for session state
+// ============================
+async function saveState(key: string, value: any) {
+    await fetch("/api/saveState", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ key, value }),
+    });
+  }
+  
+  async function loadState(): Promise<Record<string, any>> {
+    const response = await fetch("/api/getState");
+    const data = await response.json();
+    return data.sessionState || {};
+  }
+
 interface AppState {
     screens: Screen[];
     dialogs: any[];
@@ -31,6 +48,7 @@ interface AppState {
     status: AppStatus;
 
     renderScanlines: boolean; // should scanlines be enabled?
+    powerState: Record<string, boolean>; // Add this line
 }
 
 enum DialogType {
@@ -140,11 +158,19 @@ class Phosphor extends Component<any, AppState> {
         );
     }
 
-    // public react events
-    public componentDidMount(): void {
-        // parse the data & prep the screens
+    public async componentDidMount(): Promise<void> {
+        // Existing logic: parse screens and dialogs
         this._parseScreens();
         this._parseDialogs();
+    
+        // New logic: load session state
+        const savedState = await loadState();
+        console.log("Loaded session state:", savedState);
+    
+        // Update power state or any other session-related data
+        this.setState({
+            powerState: savedState, // Add powerState to AppState if needed
+        });
     }
 
     // private methods
