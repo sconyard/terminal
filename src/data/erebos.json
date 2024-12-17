@@ -29,27 +29,27 @@
           "=========",
           "",
           {
-            "text": "> CRYOGENICS BAY",
+            "text": "> CRYOGENICS",
             "type": "link",
             "target": "cryogenics"
           },
           {
-            "text": "> ENGINEERING BAY",
+            "text": "> ENGINEERING",
             "type": "link",
             "target": "engineering"
           },
           {
-            "text": "> MEDBAY",
+            "text": "> MEDICAL",
             "type": "link",
             "target": "medbay"
           },
           {
-            "text": "> COMMAND CENTER",
+            "text": "> SECURITY",
             "type": "link",
             "target": "commandcenter"
           },
           {
-            "text": "> CONTAINMENT",
+            "text": "> SYSTEM",
             "type": "link",
             "target": "containment"
           },
@@ -64,11 +64,11 @@
         "id": "cryogenics",
         "type": "screen",
         "content": [
-          "Cryogenics Bay",
+          "Cryogenics",
           "=============",
           "",
           {
-            "text": "> VIEW EVACUATION LOGS",
+            "text": "> VIEW CRYO POD LOGS",
             "type": "link",
             "target": "cryologs"
           },
@@ -83,13 +83,37 @@
         "id": "cryologs",
         "type": "screen",
         "content": [
-          "Evacuation Logs",
+          "Cryo Pod Logs",
           "===============",
           "",
-          "EVACUATION STATUS: COMPLETE",
-          "LAST RECORDED DATE: 366 DAYS AGO",
-          "NOTE: No records found for current user.",
+          "POD 1: EVACUATION STATUS INCOMPLETE",
+          "POD 1: LIFESIGNS INCOMPLETE",
+          "EVACUATION STATUS: NULL",
+          "POD 1: NO LOG ENTRY NAME FOR ENTITY IN POD",
+          "LAST RECORDED SYSTEM PURGE DATE: 366 DAYS AGO",
+          "SYSTEM PURGE RECOMMENDED",
           "",
+          {
+                "type": "toggle",
+                "states": [
+                    {
+                        "active": true,
+                        "text": "> SYSTEM PURGE: POD 1? ..."
+                    },
+                    {
+                        "active": false,
+                        "text": "> SYSTEM PURGE COMMENCING, PLEASE VACATE AREA AROUND POD 1 ... CONFIRM?"
+                    },
+                    {
+                        "active": false,
+                        "text": "> SYSTEM PURGE COMPLETE ...  AWAITING RESULTS OF BIOMASS ANALYSIS ..."
+                    },
+                    {
+                        "active": false,
+                        "text": "> BIOMASS UNRECOGONISED ... POSIBLE XENO ENCOUNTED ... ADDED TO CONTAINMENT LOGS "
+                    }
+                ]
+            },
           {
             "text": "< BACK",
             "target": "cryogenics",
@@ -196,9 +220,10 @@
           "=============",
           "ERROR IN VIDEO FEEDS",
           ".............",
-          "_______________",
-          "|             |",
-          "|             |",
+          "|-------------|",
+          "|...MED.BAY...|",
+          "|.............|",
+          "|_____________|",
           "MOVEMENT DETECTED: CRYOGENICS BAY",
           "MOVEMENT DETECTED: MED BAY",
           "MOVEMENT DETECTED: CONTAINMENT",
