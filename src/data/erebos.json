@@ -210,7 +210,7 @@
           {
             "type": "link",
             "text": "Enter Engineering access passcard to access additional sub-routines ...",
-            "target": "engineeringadmin"
+            "target": "engineeringadmin1"
           },
           {
             "text": "< BACK",
@@ -225,11 +225,118 @@
         "content": [
           "Power Grid Status",
           "=================",
-          "",
+          "!!!!!!!!!!!!!!!!!",
           "STATUS: POWER OUTPUT BEYOND MAXIMUM FAILSAFE LEVELS",
+          "!!!!!!!!!!!!!!!!!",
           "STATUS: POWER OUTPUT FAILS IN >60 HOURS",
+          "!!!!!!!!!!!!!!!!!",
           "=======================",
           "",
+          {
+            "text": "< BACK",
+            "target": "engineering",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "engineeringadmin1",
+        "type": "screen",
+        "content": [
+          "ENGINEER SUB-SYSTEM ACCESS",
+          "=================",
+          {
+            "text": "> ENVIRONMENTAL",
+            "target": "env",
+            "type": "link"
+          },
+          {
+            "text": "> POWERGRID SUB-SYSTEMS",
+            "target": "engineeringadmin",
+            "type": "link"
+          },
+          {
+            "text": "> SYSTEM DIAGNOSTIC TOOLS",
+            "target": "diag",
+            "type": "link"
+          }
+          {
+            "text": "< BACK",
+            "target": "engineering",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "env",
+        "type": "screen",
+        "content": [
+          "Environmental Control Systems",
+          "====================",
+          "",
+          "STATUS: ENVIRONMENTAL TOOLS OFFLINE",
+          "",
+          "SYSTEM DIAGNOSTICS:",
+          "- Oxygen Regulation: FAILING",
+          "- Temperature Control: INACTIVE",
+          "- Air Filtration: UNSTABLE",
+          "",
+          "ALERTS:",
+          "- CO2 levels rising in unventilated areas.",
+          "- Freezing temperatures detected in Engineering Bay.",
+          "- Contaminant buildup in Medbay air filters.",
+          "",
+          "RECOMMENDATION:",
+          "- No recommendation available", 
+          "- Repair not possible at this time, please consider station EVACUATION",
+          "",
+          {
+            "text": "< BACK",
+            "target": "engineering",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "id": "diag",
+        "type": "screen",
+        "content": [
+          "System Diagnostic Tools",
+          "====================",
+          "",
+          "STATUS: DIAGNOSTIC TOO%%%LS U!@#!@AVA!LAB__<DATA MISSING>",
+          "",
+          "SYSTEM ACCESS:",
+          "- Hangar Bay Control: DIVERTED TO C###MM@ND CENT___---ERROR",
+          "- Security Monitor--##NG: D!V####RTED [SYST##M F@!LURE]",
+          "- Life Support: UN@@--&*^----STABL---<DATA CORRUPTED>",
+          "",
+          "ALERTS:",
+          "- Command Cen--ter--@& OVERRIDE----@%@%@%@---ENGAGED.",
+          "- Local d&^##&gnostics RE#@!STRICTED &+=+=+=+<EOR>",
+          "",
+          "RECOMMENDATION:",
+          "Access too---ERROR: MANU@L OVERRIDE ----$#$%@-- ENGINEER---.",
+          "EOF",
+          "EOF",
+          "=======================================================",
+          "CONTAINMEEEEEEEEEEEEEEEEEEEEEEE",
+          "ERR",
+          "EOF ERR",
+          "REDO REDO REDO REDO REDO REDO",
+          "EVACUATE",
+          "WARNING: SYSTEM ANOMALY DETECTED.",
+          "!!!!!!!!!!!!!!!!!",
+          "YOU ARE NOT AUTHORIZED TO BE HERE.",
+          "!!!!!!!!!!!!!!!!!",
+          "EVACUATION PROTOCOLS: UNABLE TO RESET.",
+          "CONTAINMENT PROTOCOLS: FAILED",
+          "LIFESIGNS: 4 DETECTED.",
+          "CORRECTION: 5 DETECTED.",
+          "CORRECTION: 6 DETECTED.",
+          "CORRECTION:… IT COMES",
+          "TIME REMAINING: IRRELEVANT.",
+          "ITS ALREADY TOO LATE.”,",
           {
             "text": "< BACK",
             "target": "engineering",
@@ -241,8 +348,17 @@
         "id": "engineeringadmin",
         "type": "screen",
         "content": [
-          "Engineering Admin",
-          "=================",
+         "Power Grid Subsystem",
+          "====================",
+          "",
+          "STATUS: POWER DISTRIBUTION NON STANDARD",
+          "!!!!!!!!!!!!!!!!!",
+          "WARNING:",
+          "- Power output exceeding failsafe limits.",
+          "- Systems may shut down without manual rerouting.",
+          "!!!!!!!!!!!!!!!!!",
+          "RECOMMENDATION:",
+          "Redistribute power manually to prioritize critical systems.",
           "",
           {
             "type": "toggle",
