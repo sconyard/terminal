@@ -259,7 +259,7 @@
             "text": "> SYSTEM DIAGNOSTIC TOOLS",
             "target": "diag",
             "type": "link"
-          }
+          },
           {
             "text": "< BACK",
             "target": "engineering",
