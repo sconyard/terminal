@@ -803,7 +803,7 @@
           "",
           {
             "text": "< BACK",
-            "target": "artifactlogs",
+            "target": "research",
             "type": "link"
           }
         ]
@@ -815,7 +815,10 @@
           "Time Dilation Log",
           "====================",
           "",
-          "LAST EVENT 3750 days old ... ",
+          "LAST EVENT RECORDED: T-51361200 SECONDS PRIOR.",
+          "RECORDED TIME ELAPSED: NOT VERIFIED",
+          "SYSTEM STATUS: AGED EVENT LOG, OVERDUE FOR ROTATION. CURRENT STATUS UNVERIFIABLE.... ",
+          "=======================================================",
           "OBSERVED EFFECTS:",
           "- **T-01**: Personnel reported 'lag' in movement perception (~0.4s delay).",
           "- **T-07**: Object dropped into field reappeared **6 seconds later**.",
